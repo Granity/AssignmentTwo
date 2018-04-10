@@ -1,0 +1,7 @@
+
+a001,gender M,age 52,sales 123,bmi Overweight,salary 50,birthday 23-10-1998,valid 1,
+Z005,gender F,age 18,sales 624,bmi Normal,salary 85,birthday 25-04-1158,valid 1,
+C078,gender F,age 35,sales 485,bmi Underweight,salary 320,birthday 15-08-1123,valid 1,
+F123,gender M,age 45,sales 215,bmi Overweight,salary 23,birthday 12-18-1895,valid 1,
+T456,gender M,age 82,sales 543,bmi Normal,salary 32,birthday 15-03-1935,valid 1,
+Y879,gender F,age 15,sales 146,bmi Obesity,salary 42,birthday 13-12-1925,valid 1,

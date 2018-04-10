@@ -1,0 +1,2 @@
+Duplicate Key['A05', 'F', '21', '001', 'Normal', '12', '1-1-1996']
+Duplicate Key['A001', 'F', '21', '001', 'Underweight', '12', '1-1-1996']
