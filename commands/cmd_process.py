@@ -14,8 +14,11 @@ except NameError and ModuleNotFoundError and ImportError:
     print("Fatal Error - command.py in commands folder not found.")
     sys.exit()
 
-
-from file_reader import FileReader
+try:
+    from file_loader import FileLoader
+except NameError and ModuleNotFoundError and ImportError:
+    print("Fatal Error - file_loader.py not found.")
+    sys.exit()
 
 
 
@@ -54,9 +57,8 @@ class Process(Command):  # Claye
             separator = self.user_string
         else:
             separator = ","
-        i = FileReader()
-        FileReader.call_file(i, self.detail_mode, separator)
-
+        i = FileLoader()
+        FileLoader.call_file(i, self.detail_mode, separator)
 
     # put the methods for each switch here
     def _detail(self):
