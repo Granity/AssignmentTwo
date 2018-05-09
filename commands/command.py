@@ -9,6 +9,7 @@ except Exception as e:
     print("Exception: {}".format(e))
     sys.exit()
 
+
 class Command:
     my_command_line = None
     user_string = ""

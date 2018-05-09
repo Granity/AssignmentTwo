@@ -14,11 +14,9 @@ except NameError and ModuleNotFoundError and ImportError:
     print("Fatal Error - command.py in commands folder not found.")
     sys.exit()
 
-try:
-    from file_reader import FileReader
-except NameError and ModuleNotFoundError and ImportError:
-    print("Fatal Error - file_reader.py not found.")
-    sys.exit()
+
+from file_reader import FileReader
+
 
 
 class Process(Command):  # Claye
@@ -58,6 +56,7 @@ class Process(Command):  # Claye
             separator = ","
         i = FileReader()
         FileReader.call_file(i, self.detail_mode, separator)
+
 
     # put the methods for each switch here
     def _detail(self):

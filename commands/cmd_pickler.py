@@ -38,14 +38,23 @@ except Exception as e:
     print(Err.get_error_message(901, e))
     sys.exit()
 
-try:
-    from file_reader import FileReader as fr
-except NameError and ModuleNotFoundError and ImportError:
-    print(Err.get_error_message(404, "file_reader"))
-    sys.exit()
-except Exception as e:
-    print(Err.get_error_message(901, e))
-    sys.exit()
+# try:
+#     from file_reader import FileReader as fr
+# except NameError and ModuleNotFoundError and ImportError:
+#     print(Err.get_error_message(404, "file_reader"))
+#     sys.exit()
+# except Exception as e:
+#     print(Err.get_error_message(901, e))
+#     sys.exit()
+
+# try:
+#     from file_reader import FileReader as fr
+# except NameError and ModuleNotFoundError and ImportError:
+#     print(Err.get_error_message(404, "file_reader"))
+#     sys.exit()
+# except Exception as e:
+#     print(Err.get_error_message(901, e))
+#     sys.exit()
 
 
 class Pickler(Command):  # Graham, Claye
