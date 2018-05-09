@@ -5,55 +5,32 @@ from validators.validate_emp_id import ValidateEmpId as Ve
 from validators.validate_gender import ValidateGender as Vg
 from validators.validate_salary import ValidateSalary as Vs
 from validators.validate_sales import ValidateSales as Vsa
+import sys
 
 
-class DataProcessor(object):    # Claye
+class DataProcessor(object):    # Claye #############  Duplicate code ###########
     @staticmethod
     def send_to_validate(dict_root, switch, dup_keys):
+        dict_list = {'gender': 'Vg', 'bmi': 'Vb', 'birthday': 'Vd', 'age': 'Va', 'salary': 'Vs', 'sales': 'Vsa'}
         valid_rows = 0
         invalid_rows = 0
         for k, v in dict_root.items():
             valid = 0
             length_of_values = len(v)
-            # if k != '':
             result = Ve.is_valid(k)
             if result[1]:
                 valid += 1
             for kv in v.keys():
-                if kv == 'gender':
-                    result = Vg.is_valid(dict_root[k][kv])
-                    if result[1]:
-                        dict_root[k][kv] = result[0]
-                        valid += 1
-                if kv == 'bmi':
-                    result = Vb.is_valid(dict_root[k][kv])
-                    if result[1]:
-                        dict_root[k][kv] = result[0]
-                        valid += 1
-                if kv == 'birthday':
-                    i = Vd()
+         # ---------------------NEW CODE ------------------------------
+                if kv in dict_list.keys():
+                    matching_key = dict_list[kv]
+                    class_target = getattr(sys.modules[__name__], matching_key)
+                    i = class_target()
                     result = i.is_valid(dict_root[k][kv])
                     if result[1]:
                         dict_root[k][kv] = result[0]
                         valid += 1
-                if kv == 'age':
-                    i = Va()
-                    result = i.is_valid(dict_root[k][kv])
-                    if result[1]:
-                        dict_root[k][kv] = result[0]
-                        valid += 1
-                if kv == 'salary':
-                    i = Vs()
-                    result = i.is_valid(dict_root[k][kv])
-                    if result[1]:
-                        dict_root[k][kv] = str(result[0])
-                        valid += 1
-                if kv == 'sales':
-                    i = Vsa()
-                    result = i.is_valid(dict_root[k][kv])
-                    if result[1]:
-                        dict_root[k][kv] = result[0]
-                        valid += 1
+           # -------------------------------------------------------
             if valid == length_of_values:
                 dict_root[k]['valid'] = '1'
                 valid_rows += 1
