@@ -11,7 +11,6 @@ import sys
 class DataProcessor(object):    # Claye #############  Duplicate code ###########
     @staticmethod
     def send_to_validate(dict_root, switch, dup_keys):
-        dict_list = {'gender': 'Vg', 'bmi': 'Vb', 'birthday': 'Vd', 'age': 'Va', 'salary': 'Vs', 'sales': 'Vsa'}
         valid_rows = 0
         invalid_rows = 0
         for k, v in dict_root.items():
