@@ -81,7 +81,7 @@ except Exception as e:
 class CommandLine:
     prompt = ""  # Rochelle
     user_name = ""
-    debug_mode = True
+    debug_mode = False
 
     def __init__(self):
         self.prompt = "> "
